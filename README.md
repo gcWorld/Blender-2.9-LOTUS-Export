@@ -19,6 +19,6 @@
 3. Depending on the size of the model it might take a moment for the process to finish. You should now have an .x3d file with the same name as your blend file in the same folder
 4. For issues and errors check the Blender console and submit an issue ticket
 
-##Limitations
+## Limitations
 - Your .blend file has to have been saved before starting the export.
 - Probably some more ...
