@@ -20,13 +20,13 @@
 
 bl_info = {
     "name": "LOTUS Exporter",
-    "author": "Jonas Elbers",
+    "author": "Jonas Elbers (www.gcmods.de)",
     "version": (1, 0, 0),
     "blender": (2, 81, 6),
     "location": "File > Import-Export",
     "description": "Export LOTUS X3D",
     "warning": "",
-    "doc_url": "",
+    "doc_url": "https://github.com/gcWorld/Blender-LOTUS-Export/",
     "category": "Import-Export",
 }
 
@@ -34,10 +34,10 @@ import bpy
 import os
 
 class ExportLotus(bpy.types.Operator):
-    """My Object Moving Script"""      # Use this as a tooltip for menu items and buttons.
-    bl_idname = "object.move_x"        # Unique identifier for buttons and menu items to reference.
-    bl_label = "Move X by One"         # Display name in the interface.
-    bl_options = {'REGISTER', 'UNDO'}  # Enable undo for the operator.
+    """Export Lotus X3D Files"""      # Use this as a tooltip for menu items and buttons.
+    bl_idname = "lotus.export_x3d_gcw"        # Unique identifier for buttons and menu items to reference.
+    bl_label = "Export Lotus X3D Files"         # Display name in the interface.
+    #bl_options = {'REGISTER', 'UNDO'}  # Enable undo for the operator.
 
     def execute(self, context):        # execute() is called when running the operator.
         preferences = context.preferences
@@ -56,13 +56,13 @@ class ExportLotus(bpy.types.Operator):
         directory = bpy.utils.script_paths("addons")
         
         for d in directory:
-            print("checking: "+os.path.join(d,"io_scene_lotus","import_dae_export_x3d.py"))
-            if(os.path.exists(os.path.join(d,"io_scene_lotus","import_dae_export_x3d.py"))):
+            print("checking: "+os.path.join(d,__name__,"import_dae_export_x3d.py"))
+            if(os.path.exists(os.path.join(d,__name__,"import_dae_export_x3d.py"))):
                 print("Found script")
                 print("Blender 2.79 Path: "+addon_prefs.blender27)
-                print("Calling: "+'"'+addon_prefs.blender27+'" --python "'+os.path.join(d,"io_scene_lotus","import_dae_export_x3d.py")+'" -- -path '+bpy.context.blend_data.filepath+' -file '+bpy.path.display_name_from_filepath(bpy.context.blend_data.filepath))
+                print("Calling: "+'"'+addon_prefs.blender27+'" --python "'+os.path.join(d,__name__,"import_dae_export_x3d.py")+'" -- -path '+bpy.context.blend_data.filepath+' -file '+bpy.path.display_name_from_filepath(bpy.context.blend_data.filepath))
                 import subprocess
-                subprocess.call([addon_prefs.blender27, '--python', os.path.join(d,"io_scene_lotus","import_dae_export_x3d.py"), "--", "-path",bpy.context.blend_data.filepath, "-file",bpy.path.display_name_from_filepath(bpy.context.blend_data.filepath)])                #os.system('""'+addon_prefs.blender27+'"" --python "'+os.path.join(d,"io_scene_lotus","import_dae_export_x3d.py")+'" -- -path '+bpy.context.blend_data.filepath+' -file '+bpy.path.display_name_from_filepath(bpy.context.blend_data.filepath))
+                subprocess.call([addon_prefs.blender27, '--python', os.path.join(d,__name__,"import_dae_export_x3d.py"), "--", "-path",bpy.context.blend_data.filepath, "-file",bpy.path.display_name_from_filepath(bpy.context.blend_data.filepath)])                #os.system('""'+addon_prefs.blender27+'"" --python "'+os.path.join(d,"io_scene_lotus","import_dae_export_x3d.py")+'" -- -path '+bpy.context.blend_data.filepath+' -file '+bpy.path.display_name_from_filepath(bpy.context.blend_data.filepath))
                 return {'FINISHED'}            # Lets Blender know the operator finished successfully.
         return {'ERROR'}
 
