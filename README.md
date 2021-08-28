@@ -1,8 +1,8 @@
 # Blender-2.9-LOTUS-Export
  
 ## Requirements
-- Blender 2.79
-- Blender 2.93.3 (Only tested with this version. Might work with others)
+- [Blender 2.79(b)](https://www.blender.org/download/releases/2-79/)
+- [Blender 2.93.3](https://www.blender.org/download) (Only tested with this version. Might work with others)
 
 ## Installation
 1. Download a .zip file from the latest release.
