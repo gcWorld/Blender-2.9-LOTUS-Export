@@ -10,7 +10,7 @@
 3. Click on _Edit_ -> _Preferences_
 4. Select _Addons_ on the left and click on _Install..._ in the top right
 5. Select the downloaded .zip file
-6. Activate the just installed addon (should be under _Community_)
+6. Activate the just installed addon (should be under _Community_, called "LOTUS Exporter")
 7. Expand the Addon entry and fill in the path to the Blender.exe for version 2.79
 
 ## Usage
