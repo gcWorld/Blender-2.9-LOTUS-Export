@@ -5,7 +5,7 @@
 - [Blender 2.93.3](https://www.blender.org/download) (Only tested with this version. Might work with others)
 
 ## Installation
-1. Download a .zip file from the latest release.
+1. Download a .zip file from the [latest release](https://github.com/gcWorld/Blender-LOTUS-Export/releases).
 2. Open Blender 2.93
 3. Click on _Edit_ -> _Preferences_
 4. Select _Addons_ on the left and click on _Install..._ in the top right
