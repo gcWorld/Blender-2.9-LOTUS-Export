@@ -51,7 +51,7 @@ class ExportLotus(bpy.types.Operator):
         #            override = {'window': window, 'screen': screen, 'area': area}
         #            bpy.ops.view3d.copybuffer(override)
         #            break
-        bpy.ops.wm.collada_export(filepath=os.path.join(os.path.dirname(bpy.context.blend_data.filepath),bpy.path.display_name_from_filepath(bpy.context.blend_data.filepath))+".dae", selected=True, apply_modifiers=True, use_blender_profile=True, use_texture_copies=False)
+        bpy.ops.wm.collada_export(filepath=os.path.join(os.path.dirname(bpy.context.blend_data.filepath),bpy.path.display_name_from_filepath(bpy.context.blend_data.filepath))+".dae", selected=True, apply_modifiers=True, use_object_instantiation=False, use_blender_profile=True, use_texture_copies=False)
 
         directory = bpy.utils.script_paths("addons")
         
